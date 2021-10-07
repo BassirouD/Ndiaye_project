@@ -1,0 +1,46 @@
+<ion-app>
+    <ion-header translucent>
+        <ion-toolbar>
+            <ion-title>List</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+        <ion-list>
+            <ion-list-header>
+                Liste des participants
+            </ion-list-header>
+
+            <ion-item *ngFor="let participant of listeParticipants">
+                <ion-label>
+                    <h3>{{participant.nom}}</h3>
+                    <h3>{{participant.email}}</h3>
+                </ion-label>
+                <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none;">
+                    <mat-icon>more_horiz</mat-icon>
+                </button>
+
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>edit</mat-icon>
+                        <span>Modifier</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>details</mat-icon>
+                        <span>Détails</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete_forever</mat-icon>
+                        <span>Supprimer</span>
+                    </button>
+                </mat-menu>
+            </ion-item>
+        </ion-list>
+
+        <ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="add()">
+            <ion-fab-button color="danger">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </ion-content>
+</ion-app>

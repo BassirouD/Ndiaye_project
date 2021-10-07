@@ -1,39 +1,40 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {TabsPage} from './tabs.page';
 
 const routes: Routes = [
-  {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
-      {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-      },
-      {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-      },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
+    {
+        path: 'tabs',
+        component: TabsPage,
+        children: [
+            {
+                path: 'acceuil',
+                loadChildren: () => import('../acceuil/acceuil.module').then(m => m.AcceuilPageModule)
+            },
+            {
+                path: 'liste-participants',
+                loadChildren: () => import('../liste-participants/liste-participants.module').then(m => m.ListeParticipantsPageModule)
+            },
+            {
+                path: 'liste-sessions',
+                loadChildren: () => import('../liste-sessions/liste-sessions.module').then(m => m.ListeSessionsPageModule)
+            },
+            {
+                path: '',
+                redirectTo: '/tabs/acceuil',
+                pathMatch: 'full'
+            }
+        ]
+    },
+    {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/acceuil',
         pathMatch: 'full'
-      }
-    ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule {
+}

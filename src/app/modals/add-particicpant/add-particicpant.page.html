@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter participant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form style="margin-top: 5%" [formGroup]="participantFormGroup">
+        <ion-item lines="none">
+            <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom">
+            </mat-form-field>
+        </ion-item>
+        <ion-item lines="none">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+        </ion-item>
+        <ion-button expand="block" (click)="addParticipant()"
+                    style="margin-left: 5%;margin-right: 5.5%;--background:#297f87;--background-activated:#297f87">
+            Enregistrer
+        </ion-button>
+    </form>
+</ion-content>
