@@ -1,0 +1,7 @@
+{
+  "name": "ndiaye",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
