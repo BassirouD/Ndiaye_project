@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'add-particicpant',
     loadChildren: () => import('./modals/add-particicpant/add-particicpant.module').then( m => m.AddParticicpantPageModule)
+  },
+  {
+    path: 'update-participant',
+    loadChildren: () => import('./modals/update-participant/update-participant.module').then( m => m.UpdateParticipantPageModule)
   }
 ];
 

@@ -1,5 +1,5 @@
 export interface Participant{
     nom: string;
-    email: string;
+    email: string
 }
 

@@ -11,7 +11,7 @@
                 Liste des participants
             </ion-list-header>
 
-            <ion-item *ngFor="let participant of listeParticipants">
+            <ion-item *ngFor="let participant of listeParticipants; let i= index">
                 <ion-label>
                     <h3>{{participant.nom}}</h3>
                     <h3>{{participant.email}}</h3>
@@ -21,7 +21,7 @@
                 </button>
 
                 <mat-menu #menu="matMenu" xPosition="before">
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="update(i,participant)">
                         <mat-icon>edit</mat-icon>
                         <span>Modifier</span>
                     </button>
@@ -29,7 +29,7 @@
                         <mat-icon>details</mat-icon>
                         <span>Détails</span>
                     </button>
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="delete(i)">
                         <mat-icon>delete_forever</mat-icon>
                         <span>Supprimer</span>
                     </button>
