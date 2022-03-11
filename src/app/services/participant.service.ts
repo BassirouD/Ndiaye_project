@@ -24,7 +24,7 @@ export class ParticipantService {
     }
 
     deleteParticipant(id: any) {
-        this.participants.splice(id,1);
+        this.participants.splice(id, 1);
     }
 
     updateParticipant(id: any, participant) {

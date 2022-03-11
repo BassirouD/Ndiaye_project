@@ -29,7 +29,6 @@ export class UpdateParticipantPage implements OnInit {
     updateParticipant() {
         this.participant.updateParticipant(this.index, this.participantFormGroup.value);
         this.modalCtrl.dismiss();
-
     }
 
 }
